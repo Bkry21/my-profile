@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0f2436;
+  --ink-2: #16324a;
+  --paper: #f6f5f1;
+  --paper-2: #efeee7;
+  --brass: #b3894f;
+  --brass-dim: #8f6d3f;
+  --ledger-green: #2f5d50;
+  --rule: #d8d4c8;
+  --muted: #5c6570;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-brass: var(--brass);
+  --color-brass-dim: var(--brass-dim);
+  --color-ledger-green: var(--ledger-green);
+  --color-rule: var(--rule);
+  --color-muted: var(--muted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Cairo", sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.tabular {
+  font-family: "IBM Plex Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-row {
+  border-top: 1px solid var(--rule);
+}
+.ledger-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
